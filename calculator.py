@@ -3,13 +3,13 @@ import sys
 
 
 def calculator(salary):
-	if salary<3500:
-		pass
-	else:
+	if salary<=3500:
+		b=salary-salary*0.165
+		c=format(b,'0.2f')
+	elif salary>3500:
 		a=salary-(salary*0.165)-3500
 		if a<=1500:
 			b=salary-salary*0.165-a*0.03
-			print(b)
 			c=format(b,'0.2f')
 		elif a>1500 and a<=4500:
 			b=salary-salary*0.165-(a*0.1-105)
@@ -29,7 +29,7 @@ def calculator(salary):
 		elif a>80000:
 			b=salary-salary*0.165-(a*0.45-13505)
 			c=format(b,'0.2f')
-		return c
+	return c
 
 dic={}
 list=[]
