@@ -2,6 +2,23 @@
 import sys
 
 
+class Config():
+
+	def __init__(self,configfile):
+		with open(configfile,'r') as file:
+			for line in file:
+				name,number=line.strip().split('=')
+				self._config['name']=number
+	def get_config(self,name):
+		return self._config.get(name)
+
+
+		
+
+
+
+
+
 def calculator(salary):
 	if salary<=3500:
 		b=salary-salary*0.165
